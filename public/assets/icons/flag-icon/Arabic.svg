@@ -1,0 +1,22 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_33_4227)">
+<g clip-path="url(#clip0_33_4227)">
+<rect width="24" height="24" rx="12" fill="#EDEDED"/>
+<rect width="17.0579" height="7.93388" transform="translate(6.94214 0.00622559)" fill="#00732F"/>
+<rect width="25.1901" height="6.94215" transform="translate(6.94214 -0.812378) rotate(90)" fill="#FF0000"/>
+<rect width="17.0579" height="8.13223" transform="translate(6.94214 7.94006)" fill="#EDEDED"/>
+<rect width="17.0579" height="7.93388" transform="translate(6.94214 16.0723)" fill="#303030"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_b_33_4227" x="-24" y="-24" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="12"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_33_4227"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_33_4227" result="shape"/>
+</filter>
+<clipPath id="clip0_33_4227">
+<rect width="24" height="24" rx="12" fill="white"/>
+</clipPath>
+</defs>
+</svg>

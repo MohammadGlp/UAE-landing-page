@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@layer components {
+    .no-scrollbar::-webkit-scrollbar {
+        @apply hidden
+    }
+
+    .slider-logo-shape {
+        @apply bg-main-color pb-4 pr-4 cursor-pointer rounded-br-[20px]
+        before:content-[''] before:absolute before:top-8 before:-left-4
+        before:border-t-[16px] before:border-l-[16px]
+        before:border-main-color before:rounded-tl-[40px] before:h-[40px] before:w-[50px]
+        before:box-content
+        after:content-[''] after:absolute after:-top-[14px] after:-right-[50px] after:border-t-[14px] after:border-l-[12px]
+        after:border-main-color after:border-solid after:rounded-tl-[40px] after:h-[20px] after:w-[50px]
+        after:box-content
+    }
+
+    .light-scrollbar::-webkit-scrollbar {
+        @apply w-2.5 rounded-full bg-transparent
+    }
+
+    .thumb-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-[#00000080] rounded-3xl
+    }
+
+    .main-border {
+        @apply border border-solid border-[#4E5F6629]/50
+    }
+
+    .main-border-bottom {
+        @apply border-b border-solid border-[#4E5F6629]/50
+    }
+
+    .glass-background {
+        @apply backdrop-blur-[32px] bg-dark-soul-1
+    }
+
+    .glass-background-dark {
+        @apply !backdrop-blur-[32px] !bg-[#27353B52]
+    }
+    .shadow-neon {
+        @apply backdrop-blur-[32px] shadow-[0px_0px_12.2px_0px_#00BFFFA3]
+    }
+    .glass-background-light {
+        @apply !backdrop-blur-[32px] !bg-[#B8CCD429]
+    }
+
+    .text-placeholder-gradient {
+        @apply placeholder:text-transparent placeholder:bg-clip-text placeholder:bg-gradient-to-r placeholder:from-[#D5D5D5] placeholder:to-[#7C7C7C]
+    }
+
+    .border-effect-blue {
+        @apply relative flex justify-center items-center overflow-hidden before:z-0 before:bg-gradient-to-r before:from-[#0F1819] before:via-[#00BFFF] before:to-[#0F1819] before:absolute before:h-[200%] before:w-[200px] before:animate-border-circle after:absolute after:content-[""] before:content-[""] after:bg-gray-dark-1 after:inset-[3px] after:z-0 after:lg:rounded-[40px] after:rounded-[32px]
+    }
+
+    .border-effect-yellow {
+        @apply relative flex justify-center items-center overflow-hidden before:z-0 before:bg-gradient-to-r before:from-[#0F1819] before:via-[#F7AB00] before:to-[#0F1819] before:absolute before:h-[300%] before:w-[200px] before:animate-border-circle after:absolute after:content-[""] before:content-[""] after:bg-gray-dark-1 after:inset-[3px] after:z-0 after:lg:rounded-[40px] after:rounded-[32px]
+    }
+}
+
+.swiper-pagination-horizontal {
+    height: fit-content;
+    position: absolute !important;
+    top: 18px !important;
+    left: 120px !important;
+}
+
+.swiper-pagination-bullet {
+    background: #27353B !important;
+    backdrop-filter: blur(32px);
+}
+
+.swiper-pagination-bullet-active {
+    background: #27353B !important;
+    opacity: 32% !important;
+    backdrop-filter: blur(32px);
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .swiper-pagination-horizontal {
+        top: 18px !important;
+        left: 80px !important;
+    }
+
+    .swiper-pagination-bullet {
+        background: #B8CCD4 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #B8CCD4 !important;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+    .swiper-pagination-horizontal {
+        top: 180px !important;
+        right: 0 !important;
+        left: 0 !important;
+    }
+
+    .swiper-pagination-bullet {
+        background: #B8CCD4 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #B8CCD4 !important;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+    .swiper-pagination-horizontal {
+        top: 80px !important;
+        right: 0 !important;
+        left: 0 !important;
+    }
+
+    .swiper-pagination-bullet {
+        background: #B8CCD4 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #B8CCD4 !important;
+    }
+}
