@@ -155,7 +155,7 @@ export const HeroComponent = () => {
                 <p className="text-gray-blue-light">
                   Choose a related Category
                 </p>
-                <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-items-center lg:h-[300px] sm:h-[150px] h-[75px] overflow-y-auto light-scrollbar thumb-scrollbar">
+                <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-items-center lg:h-[300px] sm:h-[150px] h-[200px] overflow-y-auto light-scrollbar thumb-scrollbar">
                   {NeedItems.map((item) => (
                     <div
                       className="w-40 h-full flex flex-col items-start gap-1 p-4 rounded-3xl main-border glass-background hover:border-sky-blue ease-in-out duration-500"
