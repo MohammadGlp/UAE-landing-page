@@ -11,7 +11,14 @@ import { Modal } from "@/components/modal";
 export const HeroComponent = () => {
   const [hover, setHover] = useState(false);
   const [open, setOpen] = useState(false);
+  const [text, setText] = useState("");
   const { sliderNotificationItems, NeedItems } = useMenus();
+
+  const handleSubmit = (values) => {
+    if (values.needThings) {
+      setText(values.needThings);
+    }
+  };
 
   return (
     <>
@@ -85,11 +92,11 @@ export const HeroComponent = () => {
             Lorem ipsum dolor sit amet consectetur. Scelerisque odio tempor
             euismod vestibulum.
           </p>
-          <Formik initialValues={{}} onSubmit={null}>
+          <Formik initialValues={{ needThings: "" }} onSubmit={handleSubmit}>
             <Form>
               <Input
                 id="needInput"
-                name="need-things"
+                name="needThings"
                 inputCheck={true}
                 type="text"
                 isStrict={false}
@@ -118,7 +125,7 @@ export const HeroComponent = () => {
       </div>
 
       <Modal
-        className="rounded-[40px] !bg-dark-soul-1 backdrop-blur-[32px] !gap-0 !h-fit"
+        className="rounded-[40px] !bg-dark-soul-1 backdrop-blur-[32px] sm:!w-1/2 !w-3/4 !gap-0 !h-fit"
         isOpen={open}
         size="medium"
         onClose={setOpen}
@@ -141,15 +148,14 @@ export const HeroComponent = () => {
                   Your Need:
                 </p>
                 <p className="text-gray-light-1 font-light">
-                  Lorem ipsum dolor sit amet. Rem Quis sint sed officiis minima
-                  nam sunt molestiae! In unde nemo eum velit
+                  {text ? text : "Nothing"}
                 </p>
               </div>
               <div className="flex flex-col gap-5">
                 <p className="text-gray-blue-light">
                   Choose a related Category
                 </p>
-                <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 lg:h-[300px] sm:h-[150px] h-[75px] overflow-y-auto light-scrollbar thumb-scrollbar">
+                <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 justify-items-center lg:h-[300px] sm:h-[150px] h-[75px] overflow-y-auto light-scrollbar thumb-scrollbar">
                   {NeedItems.map((item) => (
                     <div
                       className="w-40 h-full flex flex-col items-start gap-1 p-4 rounded-3xl main-border glass-background hover:border-sky-blue ease-in-out duration-500"

@@ -131,7 +131,7 @@ const Select = ({
             onChange={handleSearch}
             id="select-input-search"
             placeholder="Search Language..."
-            className={`mx-3 mt-4 mb-3 pl-10 text-gray-light-2 bg-search-icon block bg-no-repeat bg-[10px_center] outline-none main-border bg-transparent backdrop-blur-[32px] rounded-full w-[200px] min-h-10 text-placeholder-gradient`}
+            className={`mx-3 mt-4 mb-3 pl-10 text-gray-light-2 bg-search-icon block bg-no-repeat bg-[10px_center] outline-none main-border bg-transparent backdrop-blur-[32px] rounded-full lg:w-[200px] w-[150px] min-h-10 text-placeholder-gradient lg:text-base text-xs`}
           />
           <span className={`main-border`} />
           <div
