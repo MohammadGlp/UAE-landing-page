@@ -31,7 +31,6 @@ body {
     .thumb-scrollbar::-webkit-scrollbar-thumb {
         @apply bg-[#00000080] rounded-3xl
     }
-
     .main-border {
         @apply border border-solid border-[#4E5F6629]/50
     }
@@ -47,6 +46,9 @@ body {
     .glass-background-dark {
         @apply !backdrop-blur-[32px] !bg-[#27353B52]
     }
+    .glass-background-light {
+        @apply bg-gray-glass/[16%] shadow-[0px_-35px_32px_0px_#162125A3] !backdrop-blur-[32px]
+    }
     .shadow-neon {
         @apply backdrop-blur-[32px] shadow-[0px_0px_12.2px_0px_#00BFFFA3]
     }
@@ -59,11 +61,11 @@ body {
     }
 
     .border-effect-blue {
-        @apply relative flex justify-center items-center overflow-hidden before:z-0 before:bg-gradient-to-r before:from-[#0F1819] before:via-[#00BFFF] before:to-[#0F1819] before:absolute before:h-[200%] before:w-[200px] before:animate-border-circle after:absolute after:content-[""] before:content-[""] after:bg-gray-dark-1 after:inset-[3px] after:z-0 after:lg:rounded-[40px] after:rounded-[32px]
+        @apply relative flex justify-center items-center overflow-hidden before:z-0 before:bg-gradient-to-r before:from-[#0F1819] before:via-[#00BFFF] before:to-[#0F1819] before:absolute before:h-[200%] before:w-[200px] before:animate-border-circle after:absolute after:content-[""] before:content-[""] after:bg-gray-dark-1 after:lg:inset-[3px] after:inset-[4px] after:z-0 after:lg:rounded-[40px] after:rounded-[32px]
     }
 
     .border-effect-yellow {
-        @apply relative flex justify-center items-center overflow-hidden before:z-0 before:bg-gradient-to-r before:from-[#0F1819] before:via-[#F7AB00] before:to-[#0F1819] before:absolute before:h-[300%] before:w-[200px] before:animate-border-circle after:absolute after:content-[""] before:content-[""] after:bg-gray-dark-1 after:inset-[3px] after:z-0 after:lg:rounded-[40px] after:rounded-[32px]
+        @apply relative flex justify-center items-center overflow-hidden before:z-0 before:bg-gradient-to-r before:from-[#0F1819] before:via-[#F7AB00] before:to-[#0F1819] before:absolute before:h-[300%] before:w-[200px] before:animate-border-circle after:absolute after:content-[""] before:content-[""] after:bg-gray-dark-1 after:lg:inset-[3px] after:inset-[4px] after:z-0 after:lg:rounded-[40px] after:rounded-[32px]
     }
 }
 

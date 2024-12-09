@@ -14,7 +14,7 @@ export const HeaderComponent = () => {
 
   return (
     <>
-      <div className="relative z-40 flex justify-between items-center lg:mt-4 w-full h-16 lg:border border-b border-[#4E5F6629]/50 backdrop-blur-xl bg-dark-soul-1/15 lg:rounded-full px-3">
+      <div className="flex justify-between items-center lg:mt-4 w-full h-16 lg:border border-b border-[#4E5F6629]/50 bg-dark-soul-1/15 lg:rounded-full px-3">
         <div
           className={`${deviceWidth > 1280 && path === "/" ? "hidden" : "flex"} gap-2 items-center w-44 cursor-pointer`}
         >

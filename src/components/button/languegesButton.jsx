@@ -1,16 +1,35 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export const ButtonLang = ({ languages, setLanguages }) => {
   const [open, setOpen] = useState(false);
+  const componentRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (
+      componentRef?.current &&
+      !componentRef?.current?.contains(event?.target)
+    ) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (open) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   return (
-    <div
-      className={`flex items-center relative z-0 w-16 h-9 bg-dark-soul-1/15 rounded-full`}
-    >
+    <div ref={componentRef} className={`relative`}>
       <button
-        className={`flex justify-center items-center gap-1 w-full h-full cursor-pointer text-gray-light-1`}
+        className={`flex justify-center items-center gap-1 w-16 h-9 bg-dark-soul-1 cursor-pointer text-gray-light-1 rounded-full border border-transparent hover:border-[#4E5F6629]/50`}
         onClick={() => setOpen((old) => !old)}
       >
         <span
@@ -20,7 +39,7 @@ export const ButtonLang = ({ languages, setLanguages }) => {
       </button>
 
       {open ? (
-        <div className="flex flex-col justify-between items-start absolute z-50 top-16 -left-24 w-60 h-44 p-4 border border-[#4E5F6629]/50 rounded-2xl bg-lang-dialog-color/[16%] backdrop-blur-lg shadow-[0px_35px_32px_0px_#162125A3]">
+        <div className="absolute z-50 top-16 -right-24 w-60 h-44 p-4 flex flex-col justify-between items-start rounded-2xl main-border glass-background-light !shadow-[0px_35px_32px_0px_#162125A3]">
           <p className="text-gray-light-1 text-sm font-light">
             Website Language
           </p>

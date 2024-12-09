@@ -1,7 +1,12 @@
+import { Squircle } from "corner-smoothing";
+
 export const Banner = () => {
   return (
     <div className="flex xl:flex-row flex-col justify-center items-center xl:gap-10 lg:gap-6 gap-2 w-full">
-      <div className="lg:w-[271px] w-[312px] lg:h-[176px] h-fit bg-gray-dark-1 lg:rounded-[40px] rounded-[32px] hover:border-effect-blue">
+      <Squircle
+        cornerRadius={40}
+        className="lg:w-[271px] w-[312px] lg:h-[176px] h-fit bg-gray-dark-1 hover:border-effect-blue"
+      >
         <div className="flex flex-col lg:gap-6 gap-3 w-full h-full p-6 z-10">
           <div className="flex justify-between items-center">
             <span className="size-14 bg-flight-atomic-icon bg-no-repeat bg-contain block" />
@@ -16,9 +21,12 @@ export const Banner = () => {
             <span className="lg:size-14 size-12 bg-open-icon bg-no-repeat bg-contain bg-center block backdrop-blur-xl opacity-50" />
           </div>
         </div>
-      </div>
+      </Squircle>
 
-      <div className="lg:w-[271px] w-[312px] lg:h-[176px] h-fit bg-gray-dark-1 lg:rounded-[40px] rounded-[32px] hover:border-effect-blue">
+      <Squircle
+        cornerRadius={40}
+        className="lg:w-[271px] w-[312px] lg:h-[176px] h-fit bg-gray-dark-1 hover:border-effect-blue"
+      >
         <div className="flex flex-col lg:gap-6 gap-3 w-full h-full p-6 z-10">
           <div className="flex justify-between items-center">
             <span className="size-14 bg-ticket-atomic-icon bg-no-repeat bg-contain block" />
@@ -33,7 +41,7 @@ export const Banner = () => {
             <span className="lg:size-14 size-12 bg-open-icon bg-no-repeat bg-contain bg-center block backdrop-blur-xl opacity-50" />
           </div>
         </div>
-      </div>
+      </Squircle>
     </div>
   );
 };

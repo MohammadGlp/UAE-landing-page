@@ -7,6 +7,7 @@ import Input from "@/components/input/input";
 import CustomSwiper from "@/components/swiper";
 import useMenus from "@/hooks/useMenus";
 import { Modal } from "@/components/modal";
+import { Squircle } from "corner-smoothing";
 
 export const HeroComponent = () => {
   const [hover, setHover] = useState(false);
@@ -22,108 +23,109 @@ export const HeroComponent = () => {
 
   return (
     <>
-      <div className="relative z-0 flex lg:flex-row-reverse flex-col-reverse lg:w-[762px] w-[312px] lg:h-[260px] h-fit bg-gray-dark-1 rounded-[40px] p-6">
-        <div className="lg:w-[50%] w-fit flex flex-col z-0">
-          <div className="hidden absolute -top-3 right-0 lg:block z-30">
-            <div className="relative flex justify-center items-center w-[100px] h-[100px]">
-              <div className="relative z-30 flex justify-center items-center w-10 h-10 border border-sky-blue group peer hover:animate-pulse rounded-full backdrop-blur-[32px] shadow-[0px_0px_12px_0px_#00BFFFA3]">
-                <span
-                  className={`size-full bg-notification-alarm-icon bg-no-repeat bg-fixed bg-center -rotate-[15deg] group-hover:animate-swing rounded-full`}
-                />
-              </div>
-              <div className="absolute w-[90px] h-[95px] bg-ring-frame-out bg-no-repeat bg-cover flex justify-center items-center peer-hover:animate-expandShrinkHidden opacity-0 z-10" />
-              <div className="absolute w-14 h-14 bg-ring-frame-in bg-no-repeat flex justify-center items-center peer-hover:animate-expandShrink z-10" />
-            </div>
-          </div>
-          <CustomSwiper
-            modules={[FreeMode, EffectCoverflow]}
-            effect="coverflow"
-            className="mySwiperNotifications w-full lg:h-full h-36"
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={2.5}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 50,
-              depth: 200,
-              modifier: 1,
-              slideShadows: false,
-            }}
-            breakpoints={{
-              0: {
-                slidesPerView: 1.8,
-              },
-              1024: {
-                slidesPerView: 2.5,
-              },
-            }}
-            direction={"vertical"}
-            arrow={false}
-            btn={false}
-            data={sliderNotificationItems}
-            renderItem={(item) => (
-              <div
-                key={item.id}
-                className="flex items-center gap-4 lg:w-80 w-64 lg:h-[90px] h-[65px] px-4 py-3 rounded-[18px] bg-dark-soul-1 backdrop-blur-[32px] shadow-[0px_35px_32px_0px_#162125A3] cursor-pointer"
-              >
-                <div className="lg:min-w-16 min-w-12 lg:h-16 h-12 rounded-full bg-green-500"></div>
-                <div className="">
-                  <p className="text-gray-light-2 font-medium lg:text-base text-sm">
-                    {item.name}
-                  </p>
-                  <p className="text-gray-light-1 lg:text-sm text-xs">
-                    {item.notification}
-                  </p>
+      <Squircle cornerRadius={40}>
+        <div className="relative z-10 flex lg:flex-row-reverse flex-col-reverse xl:w-full lg:w-[762px] w-[312px] lg:h-[260px] h-fit bg-gray-dark-1 p-6">
+          <div className="lg:w-[50%] w-fit flex flex-col z-0">
+            <div className="hidden absolute -top-3 right-0 lg:block z-30">
+              <div className="relative flex justify-center items-center w-[100px] h-[100px]">
+                <div className="relative z-30 flex justify-center items-center w-10 h-10 border border-sky-blue group peer hover:animate-pulse rounded-full backdrop-blur-[32px] shadow-[0px_0px_12px_0px_#00BFFFA3]">
+                  <span
+                    className={`size-full bg-notification-alarm-icon bg-no-repeat bg-fixed bg-center -rotate-[15deg] group-hover:animate-swing rounded-full`}
+                  />
                 </div>
+                <div className="absolute w-[90px] h-[95px] bg-ring-frame-out bg-no-repeat bg-cover flex justify-center items-center peer-hover:animate-expandShrinkHidden opacity-0 z-10" />
+                <div className="absolute w-14 h-14 bg-ring-frame-in bg-no-repeat flex justify-center items-center peer-hover:animate-expandShrink z-10" />
               </div>
-            )}
-          />
-        </div>
-        <div className="lg:w-[50%] w-full flex flex-col gap-3">
-          <div className="flex w-full">
-            <h2 className="lg:text-2xl text-xl text-gray-light-2 font-medium">
-              Whatever you Need is Right Here
-            </h2>
-            <Button className="lg:hidden min-w-10 h-10 bg-dark-soul-1 border border-[#4E5F6629]/50 !rounded-full !p-0">
-              <span className="size-6 bg-bel-icon bg-no-repeat bg-contain" />
-            </Button>
-          </div>
-          <p className="lg:text-sm text-xs text-gray-blue font-light">
-            Lorem ipsum dolor sit amet consectetur. Scelerisque odio tempor
-            euismod vestibulum.
-          </p>
-          <Formik initialValues={{ needThings: "" }} onSubmit={handleSubmit}>
-            <Form>
-              <Input
-                id="needInput"
-                name="needThings"
-                inputCheck={true}
-                type="text"
-                isStrict={false}
-                className="lg:w-80 w-full !h-14 lg:text-sm text-xs text-placeholder-gradient"
-                placeholder="Type what you need..."
-                innerDiv="relative lg:w-fit"
-                system="mt-5"
-              >
-                <Button
-                  className={`absolute top-2 right-2 bg-gray-light-2 !rounded-full !h-10 ${hover ? "flex gap-2 animate-shake w-28 !px-0 !pl-5 !pr-2" : "animate-reverse-shake w-20"}`}
-                  onMouseEnter={setHover}
-                  onMouseLeave={() => setHover(false)}
-                  onClick={() => setOpen(!open)}
+            </div>
+            <CustomSwiper
+              modules={[FreeMode, EffectCoverflow]}
+              effect="coverflow"
+              className="mySwiperNotifications w-fit lg:h-full h-36"
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={2.5}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 50,
+                depth: 200,
+                modifier: 1,
+                slideShadows: false,
+              }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1.8,
+                },
+                1024: {
+                  slidesPerView: 2.5,
+                },
+              }}
+              direction={"vertical"}
+              arrow={false}
+              btn={false}
+              data={sliderNotificationItems}
+              renderItem={(item) => (
+                <div
+                  key={item.id}
+                  className="flex items-center gap-4 2xl:w-80 xl:w-72 lg:w-80 w-64 lg:h-[90px] h-[65px] px-4 py-3 rounded-[18px] bg-dark-soul-1 backdrop-blur-[32px] shadow-[0px_35px_32px_0px_#162125A3] cursor-pointer"
                 >
-                  Submit
-                  {hover && (
-                    <span
-                      className={`animate-shake size-4 !bg-open-icon !bg-no-repeat !bg-auto !bg-center block p-4 !bg-black rounded-full`}
-                    />
-                  )}
-                </Button>
-              </Input>
-            </Form>
-          </Formik>
+                  <div className="lg:min-w-16 min-w-12 lg:h-16 h-12 rounded-full bg-green-500"></div>
+                  <div className="">
+                    <p className="text-gray-light-2 font-medium lg:text-base text-sm">
+                      {item.name}
+                    </p>
+                    <p className="text-gray-light-1 lg:text-sm text-xs">
+                      {item.notification}
+                    </p>
+                  </div>
+                </div>
+              )}
+            />
+          </div>
+          <div className="lg:w-[50%] w-full flex flex-col gap-3">
+            <div className="flex w-full">
+              <h2 className="lg:text-2xl text-xl text-gray-light-2 font-medium">
+                Whatever you Need is Right Here
+              </h2>
+              <Button className="lg:hidden min-w-10 h-10 bg-dark-soul-1 border border-[#4E5F6629]/50 !rounded-full !p-0">
+                <span className="size-6 bg-bel-icon bg-no-repeat bg-contain" />
+              </Button>
+            </div>
+            <p className="lg:text-sm text-xs text-gray-blue font-light">
+              Lorem ipsum dolor sit amet consectetur. Scelerisque odio tempor
+              euismod vestibulum.
+            </p>
+            <Formik initialValues={{ needThings: "" }} onSubmit={handleSubmit}>
+              <Form>
+                <Input
+                  id="needInput"
+                  name="needThings"
+                  inputCheck={true}
+                  type="text"
+                  isStrict={false}
+                  className="2xl:w-80 xl:w-72 lg:w-80 w-full !h-14 lg:text-sm text-xs text-placeholder-gradient"
+                  placeholder="Type what you need..."
+                  innerDiv="relative lg:w-fit"
+                  system="mt-5"
+                >
+                  <Button
+                    className={`absolute top-2 right-2 bg-gray-light-2 !rounded-full !h-10 ${hover ? "flex gap-2 animate-shake w-28 !px-0 !pl-5 !pr-2" : "animate-reverse-shake w-20"}`}
+                    onMouseEnter={setHover}
+                    onMouseLeave={() => setHover(false)}
+                    onClick={() => setOpen(!open)}
+                  >
+                    Submit
+                    {hover && (
+                      <span
+                        className={`animate-shake size-4 !bg-open-icon !bg-no-repeat !bg-auto !bg-center block p-4 !bg-black rounded-full`}
+                      />
+                    )}
+                  </Button>
+                </Input>
+              </Form>
+            </Formik>
+          </div>
         </div>
-      </div>
-
+      </Squircle>
       <Modal
         className="rounded-[40px] !bg-dark-soul-1 backdrop-blur-[32px] sm:!w-1/2 !w-3/4 !gap-0 !h-fit"
         isOpen={open}

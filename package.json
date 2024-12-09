@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.20",
+    "corner-smoothing": "^0.1.5",
     "formik": "^2.4.6",
     "next": "15.0.3",
     "postcss": "8.4.49",

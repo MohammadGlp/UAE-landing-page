@@ -123,7 +123,6 @@ module.exports = {
       },
       colors: {
         "main-color": "#0F1819",
-        "lang-dialog-color": "#B8CCD429",
         "dark-soul-1": "#4E5F6629",
         "dark-soul-2": "#0F1819",
         "dark-soul-3": "#29353B",

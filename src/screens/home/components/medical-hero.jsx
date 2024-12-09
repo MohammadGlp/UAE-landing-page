@@ -2,7 +2,7 @@ import Button from "@/components/button/button";
 
 export const MedicalHero = () => {
   return (
-    <div className="lg:w-96 w-[312px] h-36 flex flex-col lg:gap-3 gap-4">
+    <div className="2xl:w-96 xl:w-80 lg:w-96 w-[312px] h-36 flex flex-col lg:gap-3 gap-4">
       <div className="flex justify-between items-center">
         <p className="text-gray-light-2 lg:text-2xl text-lg">
           Need Medical Services?

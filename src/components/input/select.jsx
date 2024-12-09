@@ -101,14 +101,14 @@ const Select = ({
       <div className={`${SortIcon ? "flex gap-2 items-center" : ""}`}>
         <button
           type="button"
-          className={`relative flex flex-row-reverse justify-end items-center lg:text-base text-sm main-border bg-dark-soul-1 backdrop-blur-[32px] text-gray-blue-light text-left rounded-full h-14 font-light ${img ? "indent-1" : "indent-3"} ${className}`}
+          className={`relative flex flex-row-reverse justify-end items-center lg:text-base text-sm main-border glass-background text-gray-blue-light text-left rounded-full h-14 font-light ${img ? "indent-1" : "indent-3"} ${className}`}
           onClick={() => setOpen((old) => !old)}
         >
           {!Icon ? null : (
             <span className="absolute right-1.5 top-1.5 size-6 bg-arrow-down bg-no-repeat bg-center block p-5 rounded-full backdrop-blur-[32px] main-border hover:shadow-[0px_0px_12.2px_0px_#00BFFFA3] ease-in-out duration-500 cursor-pointer" />
           )}
 
-          {!text ? "Choose Language" : text}
+          {text}
           {img && (
             <span
               className={`ml-3 size-6 ${img} bg-no-repeat bg-center block`}
@@ -125,7 +125,7 @@ const Select = ({
 
       {open ? (
         <div
-          className={`flex flex-col main-border z-50 absolute -top-72 ${width ? width : "w-full"} max-h-[288px] bg-gray-glass/[16%] shadow-[0px_-35px_32px_0px_#162125A3] backdrop-blur-[32px] rounded-[24px] ${boxClassName}`}
+          className={`flex flex-col main-border z-40 absolute -top-72 ${width ? width : "w-full"} max-h-[288px] glass-background-light rounded-[24px] ${boxClassName}`}
         >
           <input
             onChange={handleSearch}
@@ -144,7 +144,7 @@ const Select = ({
             ) : (
               stateData?.map((item) => (
                 <div
-                  className={`min-w-fit ${stateData.length <= 4 ? "h-fit" : "h-full"} border-b border-[#4E5F6629]/50 flex flex-row-reverse items-center justify-end gap-2 p-3 ml-3 cursor-pointer`}
+                  className={`min-w-fit ${stateData.length <= 4 ? "h-fit" : "h-full"} main-border-bottom flex flex-row-reverse items-center justify-end gap-2 p-3 ml-3 cursor-pointer`}
                   key={item.id}
                   onClick={() => {
                     setOpen(false);

@@ -15,15 +15,14 @@ export const HomeComponent = () => {
   const path = usePathname();
 
   return (
-    <div className="w-full h-full flex xl:flex-row lg:flex-col-reverse flex-col items-center gap-4">
-      <div className="lg:hidden block self-center">
+    <div className="w-full h-full overflow-x-hidden flex xl:flex-row 2xl:justify-start justify-center lg:flex-col-reverse flex-col items-center 2xl:gap-0 gap-4">
+      <div className="flex w-[45%] h-full xl:flex-col flex-row justify-center items-end gap-8">
         <Slider />
+        <div className="w-full lg:block hidden">
+          <Banner />
+        </div>
       </div>
-      <div className="lg:flex hidden w-[45%] h-full xl:flex-col flex-row justify-center items-end gap-8 pl-2">
-        <Slider />
-        <Banner />
-      </div>
-      <div className="xl:w-[55%] w-full flex flex-col xl:items-start items-center gap-8 xl:pr-16">
+      <div className="xl:w-[50%] w-full flex flex-col xl:items-start items-center gap-8">
         {path === "/" && deviceWidth > 1024 && <HeaderComponent />}
         <HeroComponent />
         {deviceWidth < 1024 && <Banner />}
